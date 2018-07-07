@@ -17,10 +17,6 @@ begin
         item = playlist[index]
 
         case item['type']
-        when 'website'
-            browser.goto item['url']
-            sleep(item['duration'] || 10)
-
         when 'image-gallery'
             total_duration = 0
             max_duration = item['max-duration'] || 60
@@ -47,12 +43,23 @@ begin
 
                 total_duration += duration_per_image
             end
+
+        when 'website'
+            browser.goto item['url']
+            sleep(item['duration'] || 10)
+
+            # Run each sub-item, if any.
+            (item['then-click'] || []).each do |sub_item|
+                browser.a(:css => sub_item['selector']).click
+                sleep(sub_item['duration'] || 10)
+            end
         end
 
         index += 1
         index = 0 if index >= playlist.length
     end
-rescue
+rescue => e
     puts 'An error occurred.'
     puts e
+    puts e.backtrace
 end
