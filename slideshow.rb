@@ -1,4 +1,5 @@
 require 'watir'
+require 'webdrivers'
 require 'yaml'
 
 browser = Watir::Browser.new :chrome
