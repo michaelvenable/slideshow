@@ -1,7 +1,7 @@
 require 'watir'
 require 'yaml'
 
-browser = Watir::Browser.new :firefox
+browser = Watir::Browser.new :chrome
 browser.driver.manage.window.maximize
 
 playlist = YAML.load_file('playlist.yml')
