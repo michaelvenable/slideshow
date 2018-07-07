@@ -2,5 +2,5 @@
 
 SET originalPath=%PATH%
 SET PATH=%PATH%;%CD%\drivers-windows\
-ruby screensaver.rb
+ruby slideshow.rb
 SET PATH=%originalPath%
