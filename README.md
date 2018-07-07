@@ -1,4 +1,4 @@
-# Fugro USA Land Kitchen Screen Saver
+# Website Slideshow
 
 Displays websites, images, and other useful nformation in a slide-show format. Configurable via a YAML file. Intended for display
 in our work kitchen area.
@@ -31,4 +31,4 @@ Run the .rb file.
 
 ## Authors
 
-* **Michael Venable** [email](mailto:mvenable@fugro.com)
+* **Michael Venable** [email](mailto:mv_@gmx.com)
